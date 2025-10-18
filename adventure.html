@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miles and Moments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <h1>Miles and Moments</h1>
+    <nav>
+    <ul>
+        <li><a href=index.html>HOME</a></li>
+        <li><a href=adventure.html>MY ADVENTURE</a></li>
+        <li><a href=about_me.html>ABOUT ME</a></li>
+    </ul>
+    </nav>
+    </header>
+    <main>
+        <section class="adventure-hero", id="adventure-hero">
+        <div class="bg-layer" id="bg1"></div>
+        <div class="bg-layer" id="bg2"></div>
+        <h2><strong>Adventures</strong></h2>
+        <p><strong>
+        Beneath the canopy, light and shadow dance.<br>
+        Every path leads deeper into wonder.
+        </strong></p>
+        </section>
+
+        <script>
+        const hero = document.getElementById("adventure-hero");
+        const images = [
+        "image/2025-07-Jiufen-Wulai/IMG_1276.jpg",
+        "image/2025-07-Jiufen-Wulai/IMG_1334.jpg",
+        "image/2025-07-Jiufen-Wulai/IMG_1338.jpg",
+        "image/NTOU/IMG_1942.jpg",
+        "image/NTOU/IMG_8202.jpg",
+        "image/2025-01-Dasyueshan/IMG_9898.jpg",
+        "image/2025-01-Dasyueshan/IMG_9907.jpg",
+        "image/2025-01-Dasyueshan/IMG_9917.jpg"
+        ];
+
+        const bg1 = document.getElementById("bg1");
+        const bg2 = document.getElementById("bg2");
+
+        let index = 0;
+        let showingBg1 = true;
+
+        bg1.style.backgroundImage = `url(${images[index]})`;
+
+        setInterval(() => {
+        index = (index + 1) % images.length;
+        const nextImage = `url(${images[index]})`;
+
+        if (showingBg1) {
+            bg2.style.backgroundImage = nextImage;
+            bg2.style.opacity = 1;
+            bg1.style.opacity = 0;
+        } else {
+            bg1.style.backgroundImage = nextImage;
+            bg1.style.opacity = 1;
+            bg2.style.opacity = 0;
+        }
+
+        showingBg1 = !showingBg1;
+        }, 4000);
+        </script>
+
+        <section class="adventure-gallery">
+        <h2>My Journeys</h2>
+        <div class="trip-grid">
+            <!-- 1-1 -->
+            <div class="trip-card">
+                <img src="image/2025-01-Dasyueshan/IMG_0025.jpg" alt="Dasyueshan">
+                <div class="trip-info">
+                    <h3>Dasyueshan</h3>
+                    <p>Muntjacs in motion, cedars in stillness, <br>
+                    the sacred tree and Tianchi share the quiet grace in mountain.</p>
+                    <a href="dasyueshan.html" class="read-more"><strong>Read More</strong></a>
+                </div>
+            </div>
+            <!-- 1-2 -->
+            <div class="trip-card">
+                <img src="image\2025-04-Dongyanshan\IMG_0519.JPG" alt="Dongyanshan">
+                <div class="trip-info">
+                    <h3>Dongyanshan</h3>
+                    <p>Ferns sway, forests breathe,<br>
+                    fossils keep the memory of time.</p>
+                    <a href="dongyanshan.html" class="read-more"><strong>Read More</strong></a>
+                </div>
+            </div>
+            <!-- 1-3 -->
+            <div class="trip-card">
+                <img src="image\2025-05-Baling\IMG_0766.JPG" alt="Baling">
+                <div class="trip-info">
+                    <h3>Baling</h3>
+                    <p>Rivers entwine, <br>winds echo through the valley,<br>
+                    Three Turtles Playing with a Pearl glimmers in the mist.</p>
+                    <a href="baling.html" class="read-more"><strong>Read More</strong></a>
+                </div>
+            </div>
+            <!-- 2-1 -->
+            <div class="trip-card">
+                <img src="image/2025-07-Jiufen-Wulai/IMG_1276.jpg" alt="Jiufen">
+                <div class="trip-info">
+                    <h3>Jiufen</h3>
+                    <p>Jiufen at night is quiet as a dream.<br>
+                    Lights flow through the hills like verses left behind by time.</p>
+                    <a href="jiufen.html" class="read-more"><strong>Read More</strong></a>
+                </div>
+            </div>
+            <!-- 2-2 -->
+            <div class="trip-card">
+                <img src="image/2025-07-Jiufen-Wulai/IMG_1316.jpg" alt="Yun-Hsien">
+                <div class="trip-info">
+                    <h3>Yun-Hsien</h3>
+                    <p>Where mist meets mountain,<br>
+                    dreams rise into the clouds.</p>
+                    <a href="yun-hsien.html" class="read-more"><strong>Read More</strong></a>
+                </div>
+            </div>
+
+        </div>
+        </section>
+
+    </main>
+</body>
+</html>
